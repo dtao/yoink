@@ -6,6 +6,9 @@
   "bin": {
     "yoink": "bin/yoink"
   },
+  "scripts": {
+    "test": "mocha"
+  },
   "author": "Dan Tao <daniel.tao@gmail.com>",
   "license": "MIT",
   "dependencies": {
