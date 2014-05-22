@@ -1,22 +1,6 @@
 var request = require('request');
 
-function prettyJSON(data) {
-  return JSON.stringify(data, null, 2);
-}
-
-function queryObject(data, query) {
-  return query.split('.').reduce(function(result, property) {
-    if (result instanceof Array) {
-      return result.map(function(element) {
-        return element[property];
-      });
-    } else {
-      return result[property];
-    }
-  }, data);
-}
-
-module.exports = function yoink(url, options) {
+function yoink(url, options) {
   request(url, function(error, response, body) {
     if (error) {
       console.error(error);
@@ -40,6 +24,24 @@ module.exports = function yoink(url, options) {
 
     console.log(prettyJSON(data));
   });
-};
+}
 
-module.exports.queryObject = queryObject;
+function queryObject(data, query) {
+  return query.split('.').reduce(function(result, property) {
+    if (result instanceof Array) {
+      return result.map(function(element) {
+        return element[property];
+      });
+    } else {
+      return result[property];
+    }
+  }, data);
+}
+
+function prettyJSON(data) {
+  return JSON.stringify(data, null, 2);
+}
+
+yoink.queryObject = queryObject;
+
+module.exports = yoink;
