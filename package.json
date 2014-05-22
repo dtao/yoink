@@ -1,0 +1,15 @@
+{
+  "name": "gimme",
+  "version": "0.1.0",
+  "description": "A simple CLI tool to make API requests",
+  "main": "gimme.js",
+  "bin": {
+    "gimme": "bin/gimme"
+  },
+  "author": "Dan Tao <daniel.tao@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "request": "~2.36.0",
+    "commander": "~2.2.0"
+  }
+}
