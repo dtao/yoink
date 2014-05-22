@@ -11,10 +11,12 @@ var pkgpath = path.join(__dirname, '..', 'package.json'),
 commander
   .version(pkginfo.version)
   .usage('[options] <url>')
+  .option('-q, --query <query>', 'e.g., "foo.bar" -> {foo: {bar: <value> }}')
+  .option('-l, --limit <limit>', 'max number of results you want (only applies to arrays)')
   .parse(process.argv);
 
 if (process.argv.length < 3) {
   commander.help();
 }
 
-gimme(process.argv.pop());
+gimme(process.argv.pop(), commander);
