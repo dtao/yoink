@@ -1,7 +1,7 @@
 require('should');
 
 describe('queryObject', function() {
-  var queryObject = require('../gimme').queryObject;
+  var queryObject = require('../yoink').queryObject;
 
   it('"reaches in" to the given nested property', function() {
     queryObject({foo: {bar: {baz: 1}}}, 'foo.bar.baz').should.eql(1);

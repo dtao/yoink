@@ -16,7 +16,7 @@ function queryObject(data, query) {
   }, data);
 }
 
-module.exports = function gimme(url, options) {
+module.exports = function yoink(url, options) {
   request(url, function(error, response, body) {
     if (error) {
       console.error(error);

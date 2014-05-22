@@ -1,10 +1,10 @@
 {
-  "name": "gimme",
+  "name": "yoink",
   "version": "0.1.0",
   "description": "A simple CLI tool to make API requests",
-  "main": "gimme.js",
+  "main": "yoink.js",
   "bin": {
-    "gimme": "bin/gimme"
+    "yoink": "bin/yoink"
   },
   "author": "Dan Tao <daniel.tao@gmail.com>",
   "license": "MIT",

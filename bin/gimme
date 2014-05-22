@@ -3,7 +3,7 @@
 var commander = require('commander'),
     fs = require('fs'),
     path = require('path'),
-    gimme = require('../gimme');
+    yoink = require('../yoink');
 
 var pkgpath = path.join(__dirname, '..', 'package.json'),
     pkginfo = JSON.parse(fs.readFileSync(pkgpath));
@@ -19,4 +19,4 @@ if (process.argv.length < 3) {
   commander.help();
 }
 
-gimme(process.argv.pop(), commander);
+yoink(process.argv.pop(), commander);
