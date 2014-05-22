@@ -4,7 +4,7 @@ function prettyJSON(data) {
   return JSON.stringify(data, null, 2);
 }
 
-function applyQuery(data, query) {
+function queryObject(data, query) {
   return query.split('.').reduce(function(result, property) {
     if (result instanceof Array) {
       return result.map(function(element) {
@@ -31,7 +31,7 @@ module.exports = function gimme(url, options) {
     var data = JSON.parse(body);
 
     if (options.query) {
-      data = applyQuery(data, options.query);
+      data = queryObject(data, options.query);
     }
 
     if (options.limit && data instanceof Array && options.limit < data.length) {
@@ -41,3 +41,5 @@ module.exports = function gimme(url, options) {
     console.log(prettyJSON(data));
   });
 };
+
+module.exports.queryObject = queryObject;
