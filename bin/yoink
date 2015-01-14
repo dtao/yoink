@@ -11,6 +11,8 @@ var pkgpath = path.join(__dirname, '..', 'package.json'),
 commander
   .version(pkginfo.version)
   .usage('[options] <url>')
+  .option('-u, --username <username>')
+  .option('-p, --password <password>')
   .option('-q, --query <query>', 'e.g., "foo.bar" -> {foo: {bar: <value> }}')
   .option('-l, --limit <limit>', 'max number of results you want (only applies to arrays)')
   .parse(process.argv);

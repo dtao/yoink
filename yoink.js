@@ -1,7 +1,16 @@
 var request = require('request');
 
 function yoink(url, options) {
-  request(url, function(error, response, body) {
+  var requestData = { url: url };
+
+  if (options.username) {
+    requestData.auth = {
+      user: options.username,
+      pass: options.password
+    };
+  }
+
+  request.get(requestData, function(error, response, body) {
     if (error) {
       console.error(error);
       return;
